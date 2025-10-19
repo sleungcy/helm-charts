@@ -291,7 +291,7 @@ spec:
           {{- end }}
       {{- if eq .Values.taskRunners.mode "external" }}
         - name: {{ template "n8n.taskRunners.name" . }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.taskRunners.image.respository | default .Values.image.repository }}:{{ .Values.taskRunner.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["/usr/local/bin/task-runner-launcher"]
           args: ["javascript"]

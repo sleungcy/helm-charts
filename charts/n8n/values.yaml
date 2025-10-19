@@ -815,6 +815,10 @@ taskRunners:
     # -- The port for the broker of the external task runner
     port: 5679
 
+  image:
+    repository: n8nio/runners
+    tag: ""
+
   # -- The configuration for the external task runner
   external:
     # -- The auth token for the main node
